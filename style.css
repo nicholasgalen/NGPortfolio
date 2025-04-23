@@ -229,9 +229,168 @@ header ul a{
     }
 }
 
-@media (max-aspect-ratio: 16/9){
-    .back-video{
-        width: auto;
-        height: 100%
+.intro-box {
+    background: #142d4a;
+    width: 30vw;
+    height: 40vh;
+    border-radius: 16px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@property --deg{
+    syntax: '<angle>';
+    inherits: true;
+    initial-value: 0deg;
+}
+
+.intro-box::before,
+.intro-box::after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: conic-gradient(
+        from var(--deg) at center,
+        #00c3ff,
+        #4d0199,
+        #6300c6,
+        #009dcd
+    );
+    border-radius: inherit;
+    z-index: -2;
+    padding: 2px;
+    animation: autoRotate 2s linear infinite;
+}
+
+.intro-box::after{
+    filter: blur(10px);
+}
+
+@keyframes autoRotate{
+    to{
+        --deg: 360deg;
+    }
+}
+
+.app-wrapper {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+
+
+.app {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 13px;
+    background: #142d4a;
+    overflow: hidden;
+    display: flex;
+    isolation: isolate;
+}
+
+.tag-list {
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.loop-slider {
+    width: 100%;
+    position: relative;
+}
+
+.loop-slider .inner {
+    display: flex;
+    width: max-content;
+    animation-name: loop;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: var(--direction);
+    animation-duration: var(--duration);
+}
+
+.tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #e2e8f0;
+    font-size: 0.9rem;
+    background-color: #334155;
+    border-radius: 0.6rem;
+    padding: 0.8rem 1.2rem;
+    margin-right: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+
+.tag:hover {
+    transform: translateY(-2px);
+}
+
+.tag span {
+    font-size: 1.2rem;
+    color: #64748b;
+}
+
+.fade {
+    pointer-events: none;
+    background: linear-gradient(
+        90deg, 
+        #1e293b 10%, 
+        transparent 30%, 
+        transparent 70%, 
+        #1e293b 90%
+    );
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+}
+
+@keyframes loop {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 768px) {
+    .app-wrapper {
+        position: relative;
+        right: auto;
+        top: auto;
+        transform: none;
+        margin: 2rem auto;
+        width: 90%;
+    }
+    
+    .intro-box {
+        width: 100%;
+        height: 500px;
+        min-width: unset;
+        min-height: unset;
+    }
+    
+    .tag-list {
+        padding: 1rem;
+    }
+    
+    .tag {
+        font-size: 0.8rem;
+        padding: 0.6rem 1rem;
     }
 }
