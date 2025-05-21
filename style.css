@@ -408,6 +408,12 @@ header ul a{
     font-weight: 700;
 }
 
+.section-title-projects{
+    font-size: 40px;
+    font-weight: 700;
+    height: 0vh;
+}
+
 .info-cards {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
