@@ -565,3 +565,130 @@ header ul a{
 .card:nth-child(2) h1{
     bottom: 18%;
 }
+
+.my-project{
+    display: flex;
+    flex-direction: column;
+    gap: 10%;
+    align-items: center;
+    position: relative;
+    width: 80%;
+    height: 100vh;
+    margin-top: 200px;
+    margin-bottom: 700px;
+}
+
+.project-card {
+    display: flex;
+    width: 100%;
+    height: 40%;
+    align-items: center;
+    gap: 10%;
+    justify-content: center;
+}
+
+.project-vidbox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    mix-blend-mode:exclusion;
+    position: relative;
+    cursor: pointer;
+    transition: 0.5s;
+    min-width: 400px;
+
+}
+
+.project-vidbox video{
+    object-fit: cover;
+    width: 100%;
+    box-shadow: 0 0 10px lightgray;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+.project-card video:hover{
+    box-shadow: 0 0 25px rgb(255, 255, 255);
+}
+
+.project-info{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    width: 50%;
+    padding-left: 10%;
+}
+
+.project-info h1{
+    width: 90%;
+    font-size: 25px;
+    font-weight: bold;
+    text-wrap: nowrap;
+    margin-top: 0;
+    margin-bottom: 10px;
+    max-width: 450px;
+}
+
+.project-info p{
+    width: 90%;
+    max-width: 400px;
+    min-width: 300px;
+    margin-bottom: 50px;
+    margin-top: 0;
+}
+
+.project-info button{
+    color: white;
+    padding: 15px 35px;
+    border-radius: 10px;
+    border: 1px solid #72a1de81;
+    background-color: #2200493d;
+    box-shadow: 0 0 5px #72a1de81;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.project-info button:hover{
+    opacity: 0.8;
+    box-shadow: 0 0 15px #72a1de81;
+}
+
+.project-vidbox .hover-sign{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    height: 100px;
+}
+
+.hover-sign::before,
+.hover-sign::after {
+    content: "👆";
+    text-align: center;
+    position: absolute;
+    font-size: 50px;
+    top: 20%;
+    left: 40%;
+    border-radius: 40px;
+    animation: hover-animation 4s ease-in-out infinite;
+
+}
+
+.hover-sign.active{
+    display: none;
+}
+
+@keyframes hover-animation {
+  0% {
+    box-shadow: 0 0 5px rgb(255, 255, 255);
+    transform: translate(100%, 50%) rotate(30deg);
+  }
+
+  100% {
+    box-shadow: 0 0 5px rgb(255, 255, 255);
+    transform: translateX(80%, 80%) rotate(20deg);
+  }
+}
