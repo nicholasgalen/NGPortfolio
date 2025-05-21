@@ -753,13 +753,6 @@ header ul a{
     transform: translateY(-2px);
 }
 
-.skill-percentage {
-    display: block;
-    font-size: 1.2rem;
-    margin-top: 1rem;
-    color: #00ff88;
-}
-
 @media (max-width: 768px) {
     .skills-container {
         grid-template-columns: 1fr;
@@ -767,5 +760,9 @@ header ul a{
     
     .skill-group {
         padding: 1.5rem;
+    }
+
+    .title-line {
+        display: none;
     }
 }
