@@ -853,21 +853,32 @@ header ul a{
     box-shadow: 0 0 25px rgba(97, 218, 251, 0.3);
 }
 
-/* ========== TODO TERMINAL SCRIPTS :/ ========== */
 
+
+
+
+
+
+/* ========== TERMINAL CONTAINER ========== */
 .terminal-card {
     background: #0f172a;
     font-family: 'Courier New', monospace;
     height: 615px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
     display: flex;
     flex-direction: column;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    position: relative;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
+/* ========== TERMINAL HEADER ========== */
 .terminal-header {
-    padding: 15px;
+    padding: 12px 15px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .terminal-buttons span {
@@ -876,42 +887,118 @@ header ul a{
     height: 12px;
     border-radius: 50%;
     margin-right: 8px;
+    transition: transform 0.2s ease;
+}
+
+.terminal-buttons span:hover {
+    transform: scale(1.1);
 }
 
 .terminal-buttons .close { background: #ff5f56; }
 .terminal-buttons .minimize { background: #ffbd2e; }
 .terminal-buttons .maximize { background: #27c93f; }
 
+/* ========== TERMINAL CONTENT ========== */
 .terminal-content {
+    flex: 1;
     background: #000;
-    padding: 25px;
-    border-radius: 0 0 10px 10px;
-    height: calc(100% - 60px);
+    padding: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: #61dafb #000;
+    height: calc(100% - 120px);
     overflow-y: auto;
 }
 
+.terminal-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.terminal-content::-webkit-scrollbar-thumb {
+    background: #61dafb;
+    border-radius: 3px;
+}
+
+/* ========== TERMINAL TEXT STYLES ========== */
 .terminal-line {
     color: #21c921;
-    font-size: 1.2rem;
+    font-size: 1rem;
     display: block;
-    margin-bottom: 15px;
 }
 
 .terminal-output {
-    color: #fff;
-    font-size: 1.1rem;
-    line-height: 1.6;
+    padding: 8px 0;
+    min-height: min-content;
+    color: #ffffff;
+    font-size: 1rem;
     display: block;
-    margin: 12px 0;
-    position: relative;
-    padding-left: 25px;
+    text-align: left;
 }
 
-.terminal-output::before {
-    content: "▹";
+.terminal-command {
+    color: #21c921;
+    font-weight: bold;
+}
+
+.terminal-error {
+    color: #ff4444;
+    animation: shake 0.5s;
+}
+
+.terminal-system {
     color: #61dafb;
-    position: absolute;
-    left: 0;
+    opacity: 0.9;
+    text-align: left;
+}
+
+.terminal-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #61dafb, transparent);
+    margin: 20px 0;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+}
+
+/* ========== TERMINAL INPUT ========== */
+.terminal-input {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: #000;
+    border-top: 1px solid #333;
+    position: sticky;
+    bottom: 0;
+    z-index: 1;
+}
+
+.prompt {
+    color: #21c921;
+    margin-right: 10px;
+    font-size: 1.1rem;
+}
+
+#terminalInput {
+    background: transparent;
+    border: none;
+    color: white;
+    font-family: inherit;
+    font-size: 1.1rem;
+    width: calc(100% - 30px);
+    outline: none;
+    caret-color: #21c921;
+}
+
+#terminalInput::placeholder {
+    color: #21c921;
+    opacity: 0.4;
+    font-style: italic;
+}
+
+#terminalInput:focus {
+    box-shadow: 0 2px 0 #21c921;
 }
 
 

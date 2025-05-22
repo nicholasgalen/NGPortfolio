@@ -49,7 +49,7 @@
                     for machine learning, full-stack development, and game 
                     development.</p>
 
-                <button><i class='bx bx-send'></i>Contact Me</button>
+                <button><i class='bx bx-send'></i> Contact Me</button>
             </div>
 
             <div class="app-wrapper">
@@ -276,46 +276,57 @@
         </section>
 
         <section class="additional-info">
-        <div class="info-columns">
-            <div class="column">
-                <h2 class="section-title">My Education 👨‍🎓</h2>
-                <div class="education-card">
-                    <p>2 Year Diploma, Computer Programming<br>
-                    Conestoga College, Canada<br>
-                    2023 - 2025 | GPA: 3.8/4.0</p>
-                    <img src="images/Diploma.png" alt="Diploma" class="diploma-img">
+            <div class="info-columns">
+                <div class="column">
+                    <h2 class="section-title">My Education 👨‍🎓</h2>
+                    <div class="education-card">
+                        <p>2 Year Diploma, Computer Programming<br>
+                        Conestoga College, Canada<br>
+                        2023 - 2025 | GPA: 3.8/4.0</p>
+                        <img src="images/Diploma.png" alt="Diploma" class="diploma-img">
+                    </div>
                 </div>
-            </div>
 
-            <div class="column">
-                <h2 class="section-title">Terminal 🤖</h2>
-                <div class="terminal-card">
-                    <div class="terminal-header">
-                        <div class="terminal-buttons">
-                            <span class="close"></span>
-                            <span class="minimize"></span>
-                            <span class="maximize"></span>
+                <div class="column">
+                    <h2 class="section-title">Terminal 🤖</h2>
+                    <div class="terminal-card">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <span class="close"></span>
+                                <span class="minimize"></span>
+                                <span class="maximize"></span>
+                            </div>
+                        </div>
+
+                        <div class="terminal-content">
+                            <div class="terminal-output" id="terminalOutput">
+                                <pre class="terminal-system">
+                                    <span class="terminal-line">$ nicholasgalen --welcome</span>
+                                    <span class="terminal-output">> Loading system...</span>
+                                    <span class="terminal-output">██████████████████ 100%</span>
+                                    <span class="terminal-output">System loaded. Welcome to my EPortfolio Terminal!</span>
+                                    <span class="terminal-output">Type <span class="terminal-command">'help'</span> to see available commands</span>
+                                    <div class="terminal-divider"></div>
+                                </pre>
+                            </div>
+                            <div class="terminal-input">
+                                <span class="prompt">$</span>
+                                    <input type="text" 
+                                        id="terminalInput" 
+                                        autocomplete="off"
+                                        placeholder="Type 'help' for command list">
+                            </div>
                         </div>
                     </div>
-                    <div class="terminal-content">
-                        <pre>
-                            <span class="terminal-line">$ nicholasgalen --skills</span>
-                            <span class="terminal-output">> Loading current stack...</span>
-                            <span class="terminal-output">> Android Studio  ✓</span>
-                            <span class="terminal-output">> Kotlin/Java     ✓</span>
-                            <span class="terminal-output">> ML Algorithms  ✓</span>
-                            <span class="terminal-output">> C#/.NET        ✓</span>
-                            <span class="terminal-output">> Updated: 2024-05-01</span>
-                        </pre>
-                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
     </div>
     
     <script src="script.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="terminal.js"></script>
+    <script src="commands.js"></script>
     <script >
       AOS.init();
     </script>
