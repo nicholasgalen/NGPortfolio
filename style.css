@@ -1001,6 +1001,34 @@ header ul a{
     box-shadow: 0 2px 0 #21c921;
 }
 
+.weather-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 15px;
+    margin: 20px 0;
+    border-left: 4px solid #61dafb;
+}
+
+.weather-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    padding: 8px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+}
+
+.weather-label {
+    color: #61dafb;
+    font-weight: bold;
+    min-width: 120px;
+}
+
+.weather-value {
+    color: #FFD700;
+    text-align: right;
+}
+
 
 
 

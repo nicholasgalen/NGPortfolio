@@ -19,18 +19,27 @@ class Terminal {
     }
 
     processCommand() {
-        const cmd = this.input.value.trim().toLowerCase();
+        const fullCommand = this.input.value.trim();
         this.input.value = '';
         
-        if(!cmd) return;
+        if(!fullCommand) return;
         
-        this.history.push(cmd);
-        this.print(`$ ${cmd}`, 'command');
+        this.history.push(fullCommand);
+        this.print(`$ ${fullCommand}`, 'command');
         
-        if(cmd === 'clear') return this.output.innerHTML = '';
-        if(commands[cmd]) return this.print(commands[cmd].execute());
+        if(fullCommand === 'clear') return (this.output.innerHTML = '');
         
-        this.print(`Command not found: ${cmd}`, 'error');
+        // Separa o comando base dos argumentos
+        const [baseCommand, ...args] = fullCommand.split(' ');
+        
+        if(commands[baseCommand]) {
+            // Passa os argumentos para o comando
+            Promise.resolve(commands[baseCommand].execute(args.join(' ')))
+                .then(result => this.print(result))
+                .catch(error => this.print(error, 'error'));
+        } else {
+            this.print(`Command not found: ${baseCommand}`, 'error');
+        }
     }
 
     print(text, type = 'output') {
@@ -42,7 +51,7 @@ class Terminal {
     }
 
     printWelcome() {
-        this.print(`Welcome to Nicholas Galen's terminal!\nType 'help' to start`, 'system');
+        this.print("Welcome to Nicholas Galen's terminal!\nType 'help' to start", 'system');
     }
 
     historyNav(direction) {
