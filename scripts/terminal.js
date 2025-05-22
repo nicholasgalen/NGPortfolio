@@ -9,7 +9,6 @@ class Terminal {
     init() {
         this.input.addEventListener('keydown', (e) => this.handleKey(e));
         this.printWelcome();
-        this.input.focus();
     }
 
     handleKey(e) {
@@ -29,11 +28,9 @@ class Terminal {
         
         if(fullCommand === 'clear') return (this.output.innerHTML = '');
         
-        // Separa o comando base dos argumentos
         const [baseCommand, ...args] = fullCommand.split(' ');
         
         if(commands[baseCommand]) {
-            // Passa os argumentos para o comando
             Promise.resolve(commands[baseCommand].execute(args.join(' ')))
                 .then(result => this.print(result))
                 .catch(error => this.print(error, 'error'));
@@ -47,7 +44,11 @@ class Terminal {
         div.className = `terminal-${type}`;
         div.innerHTML = text.replace(/\n/g, '<br>');
         this.output.appendChild(div);
-        this.output.scrollTop = this.output.scrollHeight;
+        
+        this.output.scrollTo({
+            top: this.output.scrollHeight,
+            behavior: 'smooth'
+        });
     }
 
     printWelcome() {

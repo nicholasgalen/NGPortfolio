@@ -1001,6 +1001,11 @@ header ul a{
     box-shadow: 0 2px 0 #21c921;
 }
 
+.terminal-content {
+    scroll-behavior: smooth;
+    overflow-anchor: auto;
+}
+
 .weather-card {
     background: rgba(255, 255, 255, 0.05);
     border-radius: 10px;
