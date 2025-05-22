@@ -853,13 +853,6 @@ header ul a{
     box-shadow: 0 0 25px rgba(97, 218, 251, 0.3);
 }
 
-
-
-
-
-
-
-/* ========== TERMINAL CONTAINER ========== */
 .terminal-card {
     background: #0f172a;
     font-family: 'Courier New', monospace;
@@ -872,7 +865,6 @@ header ul a{
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
-/* ========== TERMINAL HEADER ========== */
 .terminal-header {
     padding: 12px 15px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -898,15 +890,17 @@ header ul a{
 .terminal-buttons .minimize { background: #ffbd2e; }
 .terminal-buttons .maximize { background: #27c93f; }
 
-/* ========== TERMINAL CONTENT ========== */
 .terminal-content {
     flex: 1;
     background: #000;
     padding: 10px;
     scrollbar-width: thin;
+    scroll-behavior: smooth;
     scrollbar-color: #61dafb #000;
     height: calc(100% - 120px);
     overflow-y: auto;
+    transform: translateZ(0);
+    overscroll-behavior: contain;
 }
 
 .terminal-content::-webkit-scrollbar {
@@ -918,7 +912,6 @@ header ul a{
     border-radius: 3px;
 }
 
-/* ========== TERMINAL TEXT STYLES ========== */
 .terminal-line {
     color: #21c921;
     font-size: 1rem;
@@ -962,7 +955,6 @@ header ul a{
     75% { transform: translateX(-5px); }
 }
 
-/* ========== TERMINAL INPUT ========== */
 .terminal-input {
     display: flex;
     align-items: center;

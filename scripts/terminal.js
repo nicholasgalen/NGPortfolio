@@ -45,11 +45,15 @@ class Terminal {
         div.innerHTML = text.replace(/\n/g, '<br>');
         this.output.appendChild(div);
         
-        this.output.scrollTo({
-            top: this.output.scrollHeight,
+        requestAnimationFrame(() => {
+        const container = this.output.parentElement;
+        container.scrollTop = container.scrollHeight;
+        container.scrollTo({
+            top: container.scrollHeight,
             behavior: 'smooth'
         });
-    }
+    });
+}
 
     printWelcome() {
         this.print("Welcome to Nicholas Galen's terminal!\nType 'help' to start", 'system');
