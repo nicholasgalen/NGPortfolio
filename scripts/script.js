@@ -2,33 +2,33 @@ const video1 = document.getElementById('projectVideo1');
 const video2 = document.getElementById('projectVideo2');
 const video3 = document.getElementById('projectVideo3');
 
-const sideBar = document.querySelector('.sidebar');
-const menu = document.querySelector('.menu-icon');
-const closeIcon = document.querySelector('.close-icon')
+const videoList = [video1, video2, video3];
 
+function handleVideoInteraction(video) {
+    const isMobile = window.matchMedia("(max-width: 480px)").matches;
 
-const hoverSign = document.querySelector('.hover-sign');
+    if (!isMobile) {
+        video.addEventListener("mouseover", function() {
+            video.play();
+            if (hoverSign) hoverSign.classList.add("active");
+        });
 
-const videoList =[video1, video2, video3];
+        video.addEventListener("mouseout", function() {
+            video.pause();
+            if (hoverSign) hoverSign.classList.remove("active");
+        });
+    } else {
+        let isPlaying = false;
 
-videoList.forEach (function(video){
-    video.addEventListener("mouseover", function(){
-        video.play()
-        hoverSign.classList.add("active")
-    })
-    video.addEventListener("mouseout", function(){
-    video.pause();
-    hoverSign.classList.remove("active")
-})
-})
+        video.addEventListener("click", function () {
+            if (isPlaying) {
+                video.pause();
+            } else {
+                video.play();
+            }
+            isPlaying = !isPlaying;
+        });
+    }
+}
 
-menu.addEventListener("click", function(){
-    sideBar.classList.remove("close-sidebar")
-    sideBar.classList.add("open-sidebar")
-});
-
-closeIcon.addEventListener("click", function(){
-    sideBar.classList.remove("open-sidebar");
-    sideBar.classList.add("close-sidebar");
-    
-})
+videoList.forEach(handleVideoInteraction);
