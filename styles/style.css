@@ -1722,7 +1722,6 @@ header ul a{
     width: 100% !important;
   }
 
-  /* ========= CONTACT ========= */
   .contact-section {
     align-items: flex-start;
     padding: 30px 15px;
@@ -1758,7 +1757,6 @@ header ul a{
   }
 }
 
-  /* ========= FOOTER ========= */
   .footer {
     position: relative;
     width: 100%;
