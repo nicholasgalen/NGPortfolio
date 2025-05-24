@@ -1148,6 +1148,7 @@ header ul a{
     0% {
         filter: blur(5px);
         opacity: 0.6;
+        transform: scale(0.9);
     }
     25% {
         filter: blur(0px);
