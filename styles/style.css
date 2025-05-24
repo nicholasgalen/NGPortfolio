@@ -1226,11 +1226,97 @@ header ul a{
     display: none;
 }
 
+.menu-icon{
+    font-size: 35px;
+    cursor: pointer;
+    display: none;
+}
 
 
-/* ========== TODO MEDIA! ========== */
+.sidebar{
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 70%;
+    width: 0%;
+    background-color: #000000b8;
+    z-index: 999;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.479);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    border-bottom-left-radius: 100%;
+    
+}
 
-/* ========== MEDIA QUERIES ========== */
+.close-icon{
+    font-size: 50px;
+    color: lightgray;
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+.sidebar ul{
+    padding-left: 20px;
+}
+
+.sidebar ul li{
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.sidebar ul li a{
+    text-decoration: none;
+    color: lightgray;
+    font-size: 30px;
+    font-weight: 900;
+    text-shadow:0 0 15px #4c4c4c;
+}
+
+.social-sidebar{
+    padding-left: 20px;
+    margin-top: 60px;
+    text-wrap: nowrap;
+}
+
+.social-sidebar a{
+    font-size: 35px;
+    padding: 5px 5px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.sidebar.open-sidebar{
+    animation: openSideBarAnimation 1.5s forwards;
+}
+
+@keyframes openSideBarAnimation {
+    to{
+        width: 80%;
+        opacity: 1;
+        bottom: 0;
+        border-radius: 0;
+    }
+}
+
+.sidebar.close-sidebar{
+    animation: closeSideBarAnimation 1.5s forwards;
+}
+
+@keyframes closeSideBarAnimation {
+    from{
+        width: 80%;
+        opacity: 1;
+        bottom: 0;
+        border-radius: 0;
+    }
+    to{
+        width: 0;
+        opacity: 0;
+        bottom: 70%;
+        border-bottom-left-radius: 50%;
+    }
+}
+
 @media (max-width: 1600px) {
   .bh-box video {
     margin-top: -18%;
@@ -1448,46 +1534,236 @@ header ul a{
 }
 
 @media (max-width: 480px) {
-  .bh-box video {
-    margin-top: -5%;
+  header ul,
+  .box-icons {
+    display: none !important;
+  }
+
+  .menu-icon {
+    display: block !important;
+  }
+
+  .left {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .introduction-info-title,
+  .introduction-info button,
+  .app-wrapper {
+    display: none;
+  }
+
+  .introduction {
+    height: 100vh;
+    text-align: center;
+    padding: 20px;
+    width: 90%;
+  }
+
+  .introduction-info {
+    position: static;
+    width: 90% !important;
   }
 
   .introduction-info h1 {
-    font-size: 24px;
-    line-height: 30px;
+    font-size: 32px !important;
+    line-height: 38px !important;
+    margin: 10px 0 !important;
   }
 
-  .intro-box {
-    height: 25vh;
+  .introduction-info p {
+    font-size: 16px !important;
+    max-width: 100% !important;
   }
 
   .scroll-down {
-    left: 45%;
+    left: 50% !important;
+    transform: translateX(-50%);
+  }
+
+  .introduction-info{
+    position: static;
+    width: 100% !important;
+  }
+  .info-cards {
+    grid-template-columns: 1fr !important;
+  }
+
+  .card {
+    height: 400px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card img {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .card img:nth-child(1) {
+    width: 70% !important;
+    height: 70% !important;
+    margin-top: 0 !important;
+    margin-left: 15%;
+  }
+
+  .card:nth-child(4){
+    display: none !important;
+  }
+
+  .card video {
+    width: 50% !important;
+    height: 50% !important;
+  }
+
+  .card h1 {
+    font-size: 20px !important;
+    top: 5%;
+  }
+
+  .card p {
+        font-size: 14px !important;
+        max-width: 100% !important;
+    }
+
+  .project-card {
+    flex-direction: column !important;
+    height: auto !important;
   }
 
   .project-vidbox {
-    min-width: 200px;
+    width: 100% !important;
+    min-width: auto !important;
+  }
+
+  .project-vidbox video {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .project-info {
+    width: 100% !important;
+    text-align: center;
   }
 
   .project-info h1 {
-    font-size: 20px;
+    font-size: 22px !important;
+    text-wrap: wrap !important;
   }
 
   .project-info p {
-    font-size: 14px;
+    min-width: auto !important;
+    margin-bottom: 10px !important;
   }
 
-  .skill-item {
-    font-size: 14px;
-    padding: 4px 8px;
+  .skills-section {
+    margin-top: 700px !important;
+  }
+  .skills-container {
+    grid-template-columns: 1fr !important;
+  }
+
+  .skill-group {
+    padding: 1.5rem !important;
+  }
+
+  .skill-items {
+    gap: 0.5rem;
+  }
+
+  .additional-info .autoBlur {
+    animation: additionalBlurAnimation linear both;
+    animation-timeline: view();
+    animation-range: entry 0% exit 100%;
+  }
+
+  @keyframes additionalBlurAnimation {
+    0%, 100% {
+      filter: blur(4px);
+      opacity: 1;
+      transform: scale(0.95);
+    }
+    30%, 70% {
+      filter: blur(0px);
+      opacity: 0.8;
+    }
+    50% {
+      filter: blur(0);
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .additional-info {
+    width: 80% !important;
+  }
+
+  .terminal-card {
+    height: 400px !important;
   }
 
   .terminal-content {
-    font-size: 14px;
+    font-size: 12px !important;
+    padding: 5px !important;
+  }
+
+  .terminal-header {
+    padding: 8px 10px !important;
+  }
+
+  .education-card {
+    padding: 1rem !important;
+    min-height: auto !important;
+  }
+
+  .diploma-img {
+    width: 100% !important;
+  }
+
+  /* ========= CONTACT ========= */
+  .contact-section {
+    align-items: flex-start;
+    padding: 30px 15px;
+  }
+
+  .contact-section h1 {
+    text-align: left;
+    width: 100%;
+    padding-left: 15px;
+    margin-bottom: 20px;
+  }
+
+  .social-box,
+  .contact-box {
+    width: 100%;
+    text-align: left;
+    padding: 0 15px;
+  }
+
+  .social-box a,
+  .contact-box p {
+    justify-content: flex-start;
+    font-size:18px;
+  }
+
+  .contact-box input {
+    margin: 5px 0;
+    padding-left: 15px;
+  }
+
+  .contact-box button {
+    margin-left: 0;
   }
 }
 
-/* Ajustes para aspect ratio específico */
+  /* ========= FOOTER ========= */
+  .footer {
+    position: relative;
+    width: 100%;
+  }
+
 @media (max-aspect-ratio: 16/9) {
   .back-video {
     width: auto;
@@ -1502,7 +1778,6 @@ header ul a{
   }
 }
 
-/* Fallback para browsers sem suporte a animation-timeline */
 @supports not (animation-timeline: view()) {
   .autoBlur,
   .autoDisplay,
