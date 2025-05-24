@@ -1230,72 +1230,293 @@ header ul a{
 
 /* ========== TODO MEDIA! ========== */
 
-@media (max-width: 768px) {
-    .skills-container {
-        grid-template-columns: 1fr;
-    }
-    
-    .skill-group {
-        padding: 1.5rem;
-    }
+/* ========== MEDIA QUERIES ========== */
+@media (max-width: 1600px) {
+  .bh-box video {
+    margin-top: -18%;
+  }
+}
 
-    .title-line {
-        display: none;
-    }
+@media (max-width: 1400px) {
+  .introduction-info h1 {
+    font-size: 40px;
+    line-height: 50px;
+  }
+  
+  .app-wrapper {
+    right: 2%;
+  }
+}
 
-    .mobile-frame {
-        width: 250px;
-        height: 500px;
-    }
-    
-    .project-card {
-        flex-direction: column;
-        gap: 30px;
-        height: auto;
-        margin-bottom: 100px;
-    }
-    
-    .project-vidbox,
-    .project-info {
-        width: 100% !important;
-        min-width: unset !important;
-    }
-    
-    .project-info {
-    display: flex;
+@media (max-width: 1200px) {
+  .bh-box video {
+    margin-top: -15%;
+  }
+
+  .introduction {
     flex-direction: column;
-    align-items: flex-start; 
     justify-content: center;
-    width: 50%;
-    padding-left: 5%;
-    transform: translateX(-5%);
-}
-    .project-info {
-        align-items: center;
-        text-align: center;
-        padding-left: 0;
-        transform: none;
-    }
-    
-    .project-card:nth-child(1) .project-vidbox,
-    .project-card:nth-child(2) .project-vidbox {
-        transform: none;
-    }
+    gap: 50px;
+  }
+
+  .introduction-info {
+    position: relative;
+    left: 0;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .app-wrapper {
+    position: relative;
+    right: 0;
+    top: 0;
+    transform: none;
+    width: 90%;
+    margin-top: 50px;
+  }
+
+  .info-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .card:nth-child(3) {
+    grid-row: span 1;
+    height: auto;
+  }
+
+  .card:nth-child(4) {
+    grid-column: span 1;
+  }
+
+  .project-card {
+    flex-direction: column;
+    margin-bottom: 150px;
+  }
+
+  .project-vidbox,
+  .project-info {
+    width: 100% !important;
+    text-align: center;
+  }
+
+  .project-info {
+    padding-left: 0;
+    align-items: center;
+  }
 }
 
-@media (min-width: 1024px) {
-    .project-card:nth-child(1) .project-info {
-        width: 50%;
-        padding-left: 10%;
-        align-items: flex-start;
-        text-align: left;
-    }
-    
-    .project-card:nth-child(1) .project-info h1,
-    .project-card:nth-child(1) .project-info p {
-        width: 100%;
-        max-width: 450px;
-        left: auto;
-        right: auto;
-    }
+@media (max-width: 992px) {
+  header ul {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .box-icons {
+    gap: 20px;
+  }
+
+  .introduction-info h1 {
+    font-size: 35px;
+    line-height: 45px;
+  }
+
+  .intro-box {
+    width: 50vw;
+    height: 35vh;
+  }
+
+  .info-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-container {
+    grid-template-columns: 1fr;
+  }
+
+  .info-columns {
+    flex-direction: column;
+  }
+
+  .contact-section {
+    flex-direction: column;
+    gap: 50px;
+    height: auto;
+    padding: 50px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    gap: 50px;
+  }
+
+  .left img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .bh-box video {
+    margin-top: -10%;
+  }
+
+  .introduction-info h1 {
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  .intro-box {
+    width: 80vw;
+    height: 40vh;
+  }
+
+  .project-vidbox {
+    min-width: 300px;
+  }
+
+  .mobile-frame {
+    width: 180px;
+    height: 320px;
+  }
+
+  .terminal-card {
+    height: 500px;
+  }
+
+  .contact-box,
+  .social-box {
+    width: 90%;
+    max-width: none;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    height: auto;
+  }
+}
+
+@media (max-width: 576px) {
+  header {
+    padding: 0 15px;
+  }
+
+  .left h1 {
+    font-size: 24px;
+  }
+
+  .introduction-info h1 {
+    font-size: 28px;
+    line-height: 35px;
+  }
+
+  .intro-box {
+    width: 90vw;
+    height: 30vh;
+  }
+
+  .project-vidbox {
+    min-width: 250px;
+  }
+
+  .mobile-frame {
+    width: 150px;
+    height: 300px;
+  }
+
+  .section-title {
+    font-size: 32px;
+  }
+
+  .skill-group {
+    padding: 1.5rem;
+  }
+
+  .education-card {
+    padding: 1.5rem;
+  }
+
+  .contact-section h1 {
+    position: static;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bh-box video {
+    margin-top: -5%;
+  }
+
+  .introduction-info h1 {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  .intro-box {
+    height: 25vh;
+  }
+
+  .scroll-down {
+    left: 45%;
+  }
+
+  .project-vidbox {
+    min-width: 200px;
+  }
+
+  .project-info h1 {
+    font-size: 20px;
+  }
+
+  .project-info p {
+    font-size: 14px;
+  }
+
+  .skill-item {
+    font-size: 14px;
+    padding: 4px 8px;
+  }
+
+  .terminal-content {
+    font-size: 14px;
+  }
+}
+
+/* Ajustes para aspect ratio específico */
+@media (max-aspect-ratio: 16/9) {
+  .back-video {
+    width: auto;
+    height: 100%;
+  }
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .back-video {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Fallback para browsers sem suporte a animation-timeline */
+@supports not (animation-timeline: view()) {
+  .autoBlur,
+  .autoDisplay,
+  .fadein-left {
+    animation: none;
+    filter: blur(0);
+    opacity: 1;
+    transform: none;
+  }
+  
+  .introduction-info,
+  .project-vidbox,
+  .contact-box {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
