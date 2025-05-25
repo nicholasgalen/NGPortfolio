@@ -1,9 +1,0 @@
-
-const CONFIG = {
-    WEATHER_API_KEY: 'SUA_CHAVE_AQUI',
-    EMAILJS_CONFIG: {
-        USER_ID: 'SEU_USER_ID',
-        SERVICE_ID: 'SEU_SERVICE_ID',
-        TEMPLATE_ID: 'SEU_TEMPLATE_ID'
-    }
-};
