@@ -19,9 +19,9 @@
             </div>
 
             <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
+                <li><a href="#about" data-i18n="aboutbtn">About</a></li>
+                <li><a href="#skills" data-i18n="skillsbtn">Skills</a></li>
+                <li><a href="#projects" data-i18n="projectsbtn">Projects</a></li>
             </ul>
 
             <div class="box-icons">
@@ -48,11 +48,13 @@
 
                 <h1 data-i18n="welcome">Bringing Ideas <span class="gradient">to Life</span> One Project at<span class="gradient"> a Time</span></h1>
 
-                <p>Hi! I'm Nicholas, a mobile developer with a strong passion 
+                <p data-i18n="introduction">Hi! I'm Nicholas, a mobile developer with a strong passion 
                     for machine learning, full-stack development, and game 
                     development.</p>
 
-                <button class="scroll-to-contact"><i class='bx bx-send'></i> Contact Me</button>
+                <button class="scroll-to-contact" data-i18n="contactbtn">
+                    <i class='bx bx-send'></i> <span class="btn-text">Contact Me</span>
+                </button>
             </div>
 
             <div class="app-wrapper">
@@ -139,11 +141,11 @@
         </section>
 
         <section class="info-section" id="about">
-            <h1 class="section-title autoDisplay">About Me 🙍‍♂️</h1>
+            <h1 class="section-title autoDisplay" data-i18n="aboutme">About Me 🙍‍♂️</h1>
             <div class="info-cards">
                 <div class="card">
-                    <h1>👋 Hi there, I'm Nicholas Galen!</h1>
-                    <p>I'm a recent graduate eager to start my career and grow through new challenges.</p>
+                    <h1 data-i18n="aboutmeIntroduction">👋 Hi there, I'm Nicholas Galen!</h1>
+                    <p data-i18n="aboutmeIntroduction2">I'm a recent graduate eager to start my career and grow through new challenges.</p>
                 
                     <div class="profile-img-wrapper">
                       <img src="/images/NGPhoto.jpg" alt="">
@@ -151,24 +153,26 @@
                 </div>
 
                 <div class="card">
-                    <h1>🛠️ Tech Stack</h1>
-                    <p>I work with a wide range of languages, frameworks, and tools to build scalable and efficient applications.</p>
+                    <h1 data-i18n="myStack">🛠️ Tech Stack</h1>
+                    <p data-i18n="myStack2">I work with a wide range of languages, frameworks, and tools to build scalable and efficient applications.</p>
                 
                     <img src="/images/test.png" alt="">
                 </div>
 
                 <div class="card">
-                    <h1>🌍 Flexible & Global</h1>
-                    <p>Based in Waterloo, Canada. I hold a German passport, which allows me to work in the EU without a visa. Open to remote work or relocation if needed. Time zone differences aren’t a problem.</p>
+                    <h1 data-i18n="global">🌍 Flexible & Global</h1>
+                    <p data-i18n="global2">Based in Waterloo, Canada. I hold a German passport, which allows me to work in the EU without a visa. Open to remote work or relocation if needed. Time zone differences aren’t a problem.</p>
 
                     <video src="/videos/glob.mp4" autoplay loop muted playsinline></video>
 
-                    <button class="scroll-to-contact"><i class='bx bx-send'></i> Contact Me</button>
+                    <button class="scroll-to-contact" data-i18n="contactbtn">
+                        <i class='bx bx-send'></i> <span class="btn-text">Contact Me</span>
+                    </button>
                 </div>
 
                 <div class="card">
-                    <h1>💻 Coding is My Passion</h1>
-                    <p>I love solving problems and bringing ideas to life through code. I'm always learning and exploring new technologies.</p>
+                    <h1 data-i18n="coding">💻 Coding is My Passion</h1>
+                    <p data-i18n="coding2">I love solving problems and bringing ideas to life through code. I'm always learning and exploring new technologies.</p>
                 
                     <img src="/images/grid4.png" alt="">
                 </div>
@@ -176,7 +180,7 @@
         </section>
 
          <section class="my-project" id="projects">
-            <h1 class="section-title-projects autoDisplay">My Projects 👨‍💻</h1>
+            <h1 class="section-title-projects autoDisplay" data-i18n="myProjectsCard">My Projects 👨‍💻</h1>
             <div class="project-card">
                 <div class="project-vidbox autoBlur" >
                     <div class="mobile-frame">
@@ -185,8 +189,10 @@
                     <div class="hover-sign"></div>
                 </div>
                 <div class="project-info fadein-left">
-                    <h1>Cartbutler <span class="gradient">Android</span> App</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta ipsam excepturi ex in corrupti similique dolor nam, suscipit, odio soluta at recusandae nulla, id fugiat!</p>
+                    <h1>Cartbutler <span class="gradient">Grocery</span> App</h1>
+                    <p data-i18n="cartbutlerDesc">Cartbutler is a startup project (made as our capstone) built using Agile methodology (via Jira), focused on multi-platform order management solutions, searching for the best grocery cart prices in a radius with our 
+                        API. We used GitHub for version control and developed a RESTful API with Node.js connected to a MySQL relational database. The solution includes native apps for iOS (Swift) and Android (Kotlin with Jetpack Compose), 
+                        along with a web version built with HTML, CSS, and JavaScript, all hosted on AWS. In the mobile development, I applied concepts such as DSA, debouncing, and API integration using Retrofit and Gson.</p>
                     <button class="project-link"><i class='bx bx-link-external'></i> Github</button>
             </div>
             </div>
@@ -199,7 +205,7 @@
                 </div>
                 <div class="project-info fadein-left">
                     <h1> AR <span class="gradient">Flutter</span> App </h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam modi voluptates assumenda omnis impedit ipsa veritatis soluta earum minima consequatur.</p>
+                    <p>To be finished.</p>
                     <button class="project-link"><i class='bx bx-link-external'></i> Github</button>
                 </div>
             </div>
@@ -211,18 +217,18 @@
                 
                 <div class="project-info fadein-left">
                     <h1>Brostudy <span class="gradient">Learning</span>  Website</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores numquam saepe itaque sapiente odit neque necessitatibus explicabo hic laudantium ipsam nesciunt ducimus, cumque ratione esse.</p>
+                    <p>To be finished.</p>
                     <button class="project-link"><i class='bx bx-link-external'></i> Website</button>
                 </div>
             </div>
         </section>
 
         <section class="skills-section" id="skills">
-            <h2 class="section-title autoDisplay">My Skills 🧙‍♂️</h2>
+            <h2 class="section-title autoDisplay" data-i18n="myskills">My Skills 🧙‍♂️</h2>
             
             <div class="skills-container">
                 <div class="skill-group autoBlur">
-                    <h3>Languages & Frameworks</h3>
+                    <h3 data-i18n="skills1">Languages & Frameworks</h3>
                     <div class="skill-items">
                         <span class="skill-item">Java</span>
                         <span class="skill-item">Kotlin</span>
@@ -243,7 +249,7 @@
                 </div>
 
                 <div class="skill-group autoBlur">
-                    <h3>Tools & Platforms</h3>
+                    <h3 data-i18n="skills2">Tools & Platforms</h3>
                     <div class="skill-items">
                         <span class="skill-item">Jira</span>
                         <span class="skill-item">Docker</span>
@@ -264,15 +270,15 @@
                 <div class="skill-group autoBlur"> 
                     <h3>Soft Skills</h3>
                     <div class="skill-items">
-                        <span class="skill-item">Problem Solving</span>
-                        <span class="skill-item">Adaptability</span>
-                        <span class="skill-item">Team Collaboration</span>
-                        <span class="skill-item">Communication</span>
-                        <span class="skill-item">Time Management</span>
-                        <span class="skill-item">Curiosity-Driven</span>
-                        <span class="skill-item">Strategical Thinking</span>
-                        <span class="skill-item">Critical Thinking</span>
-                        <span class="skill-item">Self-Discipline</span>
+                        <span class="skill-item" data-i18n="soft1">Problem Solving</span>
+                        <span class="skill-item" data-i18n="soft2">Adaptability</span>
+                        <span class="skill-item" data-i18n="soft3">Team Collaboration</span>
+                        <span class="skill-item" data-i18n="soft4">Communication</span>
+                        <span class="skill-item" data-i18n="soft5">Time Management</span>
+                        <span class="skill-item" data-i18n="soft6">Curiosity-Driven</span>
+                        <span class="skill-item" data-i18n="soft7">Strategical Thinking</span>
+                        <span class="skill-item" data-i18n="soft8">Critical Thinking</span>
+                        <span class="skill-item" data-i18n="soft9">Self-Discipline</span>
                     </div>
                 </div>
             </div>
@@ -281,9 +287,9 @@
         <section class="additional-info">
             <div class="info-columns">
                 <div class="column autoBlur">
-                    <h2 class="section-title autoDisplay">My Education 👨‍🎓</h2>
+                    <h2 class="section-title autoDisplay" data-i18n="education">My Education 👨‍🎓</h2>
                     <div class="education-card">
-                        <p>2 Year Diploma, Computer Programming<br>
+                        <p data-i18n="education2">2 Year Diploma, Computer Programming<br>
                         Conestoga College, Canada<br>
                         2023 - 2025 | GPA: 3.8/4.0 (87%)</p>
                         <img src="/images/Diploma.png" alt="Diploma" class="diploma-img">
@@ -324,12 +330,12 @@
         </section>
 
         <section class="contact-section" id="contact">
-            <h1 class="section-title autoDisplay">Contact Me 💭</h1>
+            <h1 class="section-title autoDisplay" data-i18n="contactme">Contact Me 💭</h1>
 
             <div class="social-box autoBlur">
                 <a href="tel:+13828852347"><i class='bx bxs-phone'></i> +1 (382) 885-2347</a>
-                <a href="mailto:galennicholas@proton.me"><i class='bx bx-mail-send'></i> Contact galennicholas@proton.me</a>
-                <a href="https://www.linkedin.com/in/nicholas-galen/"><i class='bx bxl-linkedin-square'></i> Contact Nicholas Galen</a>
+                <a href="mailto:galennicholas@proton.me"><i class='bx bx-mail-send'></i> Mail galennicholas@proton.me</a>
+                <a href="https://www.linkedin.com/in/nicholas-galen/"><i class='bx bxl-linkedin-square'></i> LinkedIn Nicholas Galen</a>
                 <div class="social-icons">
                     <a href="https://www.youtube.com/@chuckcewrealoficial"><i class='bx bxl-youtube'></i></a>
                     <a href="https://github.com/nicholasgalen"><i class='bx bxl-github'></i></a>
@@ -337,18 +343,18 @@
             </div>
 
             <div class="contact-box autoBlur">
-                <p>Aspiring to start a career in tech. Feel free to reach out!</p>
+                <p data-i18n="desc">Aspiring to start a career in tech. Feel free to reach out!</p>
 
-                <p>Full Name</p>
+                <p data-i18n="fullname">Full Name</p>
                 <input id="contactName" placeholder="Your Full name" type="text">
 
-                <p>Email Address</p>
+                <p data-i18n="email">Email Address</p>
                 <input id="contactEmail" placeholder="Your Email" type="email">
 
-                <p>Your Message</p>
+                <p data-i18n="message">Your Message</p>
                 <input id="contactMessage" class="input-message" type="text" placeholder="share your message...">
 
-                <button id="sendButton">Send Message <i class='bx bx-mail-send'></i></button>
+                <button id="sendButton" data-i18n="message2">Send Message <i class='bx bx-mail-send'></i></button>
             </div>
 
             <div id="alert" class="alert-hidden"></div>
