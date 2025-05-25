@@ -1,0 +1,8 @@
+const CONFIG = {
+    WEATHER_API_KEY: '%%WEATHER_API_KEY%%',
+    EMAILJS_CONFIG: {
+        USER_ID: '%%EMAILJS_USER_ID%%',
+        SERVICE_ID: '%%EMAILJS_SERVICE_ID%%',
+        TEMPLATE_ID: '%%EMAILJS_TEMPLATE_ID%%'
+    }
+};
