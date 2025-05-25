@@ -965,6 +965,28 @@ header ul a{
     z-index: 1;
 }
 
+.terminal-input input {
+    flex-grow: 1;
+    background: transparent;
+    border: none;
+    color: white;
+    font-family: monospace;
+    outline: none;
+}
+
+.send-btn {
+    background: none;
+    border: none;
+    color: #72a1de;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.send-btn:hover {
+    transform: scale(1.2);
+}
+
 .prompt {
     color: #21c921;
     margin-right: 10px;

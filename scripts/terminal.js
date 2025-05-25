@@ -9,6 +9,8 @@ class Terminal {
     init() {
         this.input.addEventListener('keydown', (e) => this.handleKey(e));
         this.printWelcome();
+        this.sendBtn = document.getElementById('sendCommandBtn');
+        this.sendBtn.addEventListener('click', () => this.processCommand());
     }
 
     handleKey(e) {
