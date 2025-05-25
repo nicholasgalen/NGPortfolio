@@ -635,7 +635,7 @@ button#langToggle img {
     align-items: center;
     justify-content: center;
     width: 50%;
-    mix-blend-mode: exclusion;
+    mix-blend-mode: normal;
     position: relative;
     cursor: pointer;
     transition: 0.5s;
