@@ -1,34 +1,35 @@
-## Personal Portfolio - Nicholas Galen
-[Website link](nicholasgalen.com)
+# Personal Portfolio - Nicholas Galen  
+[https://nicholasgalen.com](https://nicholasgalen.com)
 
-This is my personal portfolio website built using HTML, CSS, and JavaScript, focused on delivering a modern, elegant, and fully responsive user experience. The site showcases my technical skills, educational background, and personal information, along with several interactive and dynamic features. It's being currently hosted on Netlify.
+This is my personal portfolio built with HTML, CSS, and JavaScript, focused on delivering a modern, elegant, and fully responsive user experience. The site showcases my technical skills, educational background, and personal info, along with interactive and dynamic features. Currently hosted on Netlify.
 
 ## Technologies Used
-    HTML5
-    CSS3
-    JavaScript (Vanilla)
-    EmailJS – for sending emails directly from the site
-    AOS (Animate on Scroll) – for scroll-based animations
-    OpenWeather API – to fetch the user’s location and temperature
+- HTML5  
+- CSS3  
+- Vanilla JavaScript  
+- EmailJS – for sending emails directly from the site  
+- AOS (Animate on Scroll) – scroll-based animations  
+- OpenWeather API – fetches user location and temperature  
 
 ## Features
-    Responsive Design – works seamlessly on desktop and mobile
-    Smooth Animations – powered by AOS and custom blur effects on scroll
-    Interactive Terminal – a functional terminal with custom commands
-      (For example: type a command to display the current temperature based on your location, using OpenWeather API)
-    Technical & Soft Skills Section – highlights my main strengths
-    Diplomas and Education – visually presented information
-    Message Form – allows users to send messages via EmailJS integration
-    Scroll Blur Effects – modern and fluid visual feedback
-    Dynamic language localization (currently supports PTBR and EN)
+- **Responsive Design** – works flawlessly on desktop and mobile  
+- **Smooth Animations** – powered by AOS and custom scroll blur effects  
+- **Interactive Terminal** – functional terminal with custom commands  
+  (e.g., shows current temperature based on your location via OpenWeather API)  
+- **Technical & Soft Skills Section**  
+- **Diplomas and Education** – visually presented  
+- **Contact Form** – sends messages via EmailJS integration  
+- **Scroll Blur Effects** – modern, fluid visual feedback  
+- **Dynamic Language Localization** – supports PT-BR and EN  
 
 ## Project Structure
-    index.html – main HTML structure
-    style.css – custom styles with responsive breakpoints
-    scripts – includes terminal logic, weather API calls, EmailJS integration, AOS initialization etc
+- `index.html` – main HTML structure  
+- `style.css` – custom styles with responsive breakpoints  
+- `scripts/` – terminal logic, weather API calls, EmailJS integration, AOS initialization, etc.  
 
 ## Contact
-    The site includes a working contact form that lets visitors send me messages directly through EmailJS.
+The site includes a working contact form allowing visitors to send me messages directly through EmailJS.
+
 
 ## Landing Page
 ![image](https://github.com/user-attachments/assets/d2a93f25-4406-4b21-a162-ea2d3dd588bf)
