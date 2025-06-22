@@ -7,7 +7,8 @@
   <style>
     .content-container {
       display: flex;
-      max-width: 700px;
+      width: 90%;
+      max-width: 1100px;
       margin: 20px auto;
       gap: 20px;
     }
@@ -52,14 +53,16 @@
     }
 
     .post-content img {
-      max-width: 100%;
-      height: auto;
-      max-height: 200px;
-      object-fit: cover;
-      display: block;
-      margin: 0 auto 1rem;
-      border-radius: 8px;
-    }
+    width: 90% !important;
+    height: auto !important;
+    object-fit: contain !important;
+    border-radius: 8px !important;
+    display: block !important;
+    margin: 0 auto 1rem !important;
+    max-height: none !important;
+  }
+
+
 
     #categoryList li a {
       color: #3366cc;
@@ -217,7 +220,7 @@
             const li = document.createElement("li");
             const a = document.createElement("a");
             a.textContent = cat;
-            a.href = `/index.html?category=${encodeURIComponent(cat)}`;
+            a.href = `/blog/index.html?category=${encodeURIComponent(cat)}`;
             li.appendChild(a);
             list.appendChild(li);
           });

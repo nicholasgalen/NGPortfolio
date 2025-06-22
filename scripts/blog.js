@@ -2,7 +2,6 @@ let currentPage = 0;
 const pageSize = 10;
 
 function loadPosts(page = 0) {
-  showApiNotice();
   fetch(`https://blog-backend-e8yb.onrender.com/api/posts/page?page=${page}&size=${pageSize}`)
     .then(res => res.json())
     .then(data => {
