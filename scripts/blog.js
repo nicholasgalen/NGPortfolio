@@ -6,7 +6,7 @@ function loadPosts(page = 0) {
   fetch(`https://blog-backend-e8yb.onrender.com/api/posts/page?page=${page}&size=${pageSize}`)
     .then(res => res.json())
     .then(data => {
-      hideApiNotice(); // <- Aqui!
+      hideApiNotice();
       const posts = data.content;
       const totalPages = data.totalPages;
 
@@ -53,11 +53,11 @@ function createPagination(current, totalPages) {
 }
 
 function loadCategories() {
-  showApiNotice(); // <- Aqui!
+  showApiNotice();
   fetch("https://blog-backend-e8yb.onrender.com/api/posts/categories")
     .then(res => res.json())
     .then(categories => {
-      hideApiNotice(); // <- Aqui!
+      hideApiNotice();
       const list = document.getElementById("categoryList");
       list.innerHTML = "";
       categories.forEach(cat => {
@@ -78,11 +78,9 @@ function loadCategories() {
 }
 
 function searchPosts(keyword) {
-  showApiNotice();
   fetch(`https://blog-backend-e8yb.onrender.com/api/posts/search?keyword=${encodeURIComponent(keyword)}`)
     .then(res => res.json())
     .then(posts => {
-      hideApiNotice();
       loadFromResponse(posts);
     });
 }
