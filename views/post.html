@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>BBlog - Post</title>
+  <link rel="stylesheet" href="/styles/blog.css" />
+  <style>
+    .content-container {
+      display: flex;
+      max-width: 700px;
+      margin: 20px auto;
+      gap: 20px;
+    }
+
+    #category-sidebar {
+      width: 180px;
+      background-color: #f0f5ff;
+      border: 1px solid #c9d7f1;
+      border-radius: 4px;
+      padding: 15px;
+      box-shadow: 2px 2px 6px #d7e2fb;
+      flex-shrink: 0;
+    }
+
+    #searchInput {
+      flex-grow: 1;
+      margin: 0 20px;
+      padding: 8px 12px;
+      font-size: 16px;
+      border-radius: 4px;
+      border: none;
+      max-width: 500px;
+      box-shadow: inset 0 0 5px #aaa;
+    }
+
+    #category-sidebar h3 {
+      margin-top: 0;
+      color: #224488;
+      font-weight: normal;
+      text-shadow: 1px 1px 0 #d7e2fb;
+      margin-bottom: 12px;
+    }
+
+    #categoryList {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    #categoryList li {
+      margin-bottom: 8px;
+    }
+
+    .post-content img {
+      max-width: 100%;
+      height: auto;
+      max-height: 200px;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto 1rem;
+      border-radius: 8px;
+    }
+
+    #categoryList li a {
+      color: #3366cc;
+      text-decoration: none;
+      cursor: pointer;
+      font-size: 14px;
+      transition: color 0.3s ease;
+    }
+
+    #categoryList li a:hover {
+      color: #224488;
+      text-decoration: underline;
+    }
+
+    main#postContent {
+      background-color: #fff;
+      border: 1px solid #c9d7f1;
+      box-shadow: 2px 2px 6px #d7e2fb;
+      border-radius: 4px;
+      padding: 20px;
+      flex-grow: 1;
+      font-size: 16px;
+      color: #333;
+    }
+
+    main#postContent h2 {
+      color: #224488;
+      text-shadow: 1px 1px 0 #d7e2fb;
+      margin-top: 0;
+    }
+
+    main#postContent .meta {
+      font-size: 13px;
+      font-style: italic;
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    main#postContent article {
+      line-height: 1.6;
+    }
+
+    main#postContent button {
+      margin-top: 20px;
+      background-color: #3366cc;
+      color: white;
+      border: none;
+      padding: 12px 16px;
+      cursor: pointer;
+      border-radius: 4px;
+      font-weight: bold;
+      box-shadow: 1px 1px 0 #224488;
+      transition: background-color 0.3s ease;
+    }
+
+    main#postContent button:hover {
+      background-color: #224488;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1><a href="/blog/index.html" style="color: inherit; text-decoration: none;">BBlog</a></h1>
+    <input type="text" id="searchBar" placeholder="Search posts..." />
+    <button class="login-button" onclick="location.href='/views/login.html'">Login</button>
+  </header>
+
+  <div class="content-container">
+    <aside id="category-sidebar">
+      <h3>Categories</h3>
+      <ul id="categoryList"></ul>
+    </aside>
+
+    <main id="postContent">
+      <p>Loading post...</p>
+    </main>
+  </div>
+
+  <script>
+    function getQueryParam(param) {
+      const params = new URLSearchParams(window.location.search);
+      return params.get(param);
+    }
+
+    function loadCategories() {
+      fetch("https://blog-backend-e8yb.onrender.com/api/posts/categories")
+        .then(res => res.json())
+        .then(categories => {
+          const list = document.getElementById("categoryList");
+          list.innerHTML = "";
+          categories.forEach(cat => {
+            const li = document.createElement("li");
+            const a = document.createElement("a");
+            a.textContent = cat;
+            a.href = `/index.html?category=${encodeURIComponent(cat)}`;
+            li.appendChild(a);
+            list.appendChild(li);
+          });
+        });
+    }
+
+    function loadPost(title) {
+      const container = document.getElementById("postContent");
+      container.innerHTML = "<p>Loading post...</p>";
+      fetch(`https://blog-backend-e8yb.onrender.com/api/posts/title/${encodeURIComponent(title)}`)
+        .then(res => {
+          if (!res.ok) throw new Error("Post not found");
+          return res.json();
+        })
+        .then(post => {
+          container.innerHTML = `
+          <h2>${post.title}</h2>
+          <div class="meta">${new Date(post.createdAt).toLocaleDateString()} | ${post.category}</div>
+          <article class="post-content">${post.body}</article>
+          <button onclick="window.history.back()">Back to posts</button>
+        `;
+        })
+        .catch(() => {
+          container.innerHTML = "<p>Post not found.</p>";
+        });
+    }
+
+    document.getElementById("searchBar").addEventListener("input", e => {
+      const keyword = e.target.value.trim();
+      if (keyword.length >= 3) {
+        window.location.href = `/index.html?search=${encodeURIComponent(keyword)}`;
+      }
+    });
+
+    const postTitle = getQueryParam("title");
+    if (postTitle) {
+      loadPost(postTitle);
+      loadCategories();
+    } else {
+      document.getElementById("postContent").innerHTML = "<p>No post specified.</p>";
+    }
+  </script>
+</body>
+</html>

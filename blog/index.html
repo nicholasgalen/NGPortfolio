@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>BBlog</title>
+  <link rel="stylesheet" href="/styles/blog.css" />
+</head>
+<body>
+  <div id="apiNotice" style="display: none; background-color: #fff3cd; color: #856404; padding: 10px; text-align: center; border: 1px solid #ffeeba; margin-bottom: 10px;">
+    The API might take up to 2 minutes to respond if inactive. Thanks for your patience!
+  </div>
+
+  <header>
+    <h1><a href="/index.html" style="color: inherit; text-decoration: none;">BBlog</a></h1>
+    <input type="text" id="searchInput" placeholder="Search posts..." />
+    <button class="login-button" onclick="location.href='/views/login.html'">Login</button>
+  </header>
+
+  <div class="container">
+    <aside id="sidebar">
+      <h3>Categories</h3>
+      <ul id="categoryList"></ul>
+    </aside>
+
+    <main>
+      <h2>Recent Posts</h2>
+      <div id="posts"></div>
+      <div id="pagination"></div>
+    </main>
+  </div>
+
+  <script src="/scripts/blog.js"></script>
+</body>
+</html>

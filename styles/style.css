@@ -631,9 +631,11 @@ button#langToggle img {
 }
 
 .project-vidbox {
+    aspect-ratio: 16 / 9;
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 100%;
     width: 50%;
     mix-blend-mode: normal;
     position: relative;
