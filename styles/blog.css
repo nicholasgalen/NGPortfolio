@@ -254,3 +254,91 @@ form#loginForm button:hover {
   margin: 0 auto 1rem;
   border-radius: 8px;
 }
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  #searchInput {
+    margin: 0;
+    width: 100%;
+    max-width: none;
+  }
+
+  .container {
+    flex-direction: column;
+    padding: 10px;
+    max-width: 100%;
+  }
+
+  #sidebar {
+    width: 100%;
+    margin-bottom: 20px;
+    box-shadow: none;
+    border: none;
+    padding: 10px 0;
+  }
+
+  main {
+    width: 100%;
+    padding: 10px 0;
+    box-shadow: none;
+    border: none;
+  }
+
+  #posts div {
+    margin-bottom: 20px;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  #posts h3 {
+    font-size: 18px;
+  }
+
+  #pagination button {
+    padding: 8px 12px;
+    margin: 4px 2px;
+  }
+
+  .read-more-button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .post-image {
+    max-height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 22px;
+  }
+
+  #searchInput {
+    font-size: 14px;
+  }
+
+  .login-button {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  #sidebar h3 {
+    font-size: 14px;
+  }
+
+  #posts h3 {
+    font-size: 16px;
+  }
+
+  .read-more-button {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+}
+

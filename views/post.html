@@ -118,6 +118,69 @@
     main#postContent button:hover {
       background-color: #224488;
     }
+
+    /* Responsividade para Post page */
+
+    @media (max-width: 768px) {
+      .content-container {
+        flex-direction: column;
+        max-width: 100%;
+        margin: 10px;
+        gap: 10px;
+      }
+
+      #category-sidebar {
+        width: 100%;
+        padding: 10px;
+        box-shadow: none;
+        border: none;
+      }
+
+      main#postContent {
+        padding: 10px;
+        box-shadow: none;
+        border: none;
+      }
+
+      #searchBar {
+        width: 100%;
+        margin: 10px 0;
+        font-size: 16px;
+      }
+
+      header {
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 22px;
+      }
+
+      header input#searchBar {
+        font-size: 14px;
+        padding: 6px 8px;
+      }
+
+      header button.login-button {
+        padding: 6px 10px;
+        font-size: 12px;
+      }
+
+      main#postContent h2 {
+        font-size: 20px;
+      }
+
+      #category-sidebar h3 {
+        font-size: 14px;
+      }
+
+      #categoryList li a {
+        font-size: 13px;
+      }
+    }
   </style>
 </head>
 <body>
